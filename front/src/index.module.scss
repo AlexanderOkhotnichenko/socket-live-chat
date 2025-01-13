@@ -1,0 +1,36 @@
+@import "normalize.css";
+@import './_fonts.scss';
+@import './_theme_mode.scss';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply outline-none box-border outline-0 m-0 p-0;
+  font-family: "Poppins", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  @apply box-border m-0 p-0;
+}
+
+html {
+  @apply h-full;
+}
+
+body {
+  @apply w-screen h-screen flex flex-col min-h-full bg-no-repeat bg-cover items-center justify-center overflow-hidden;
+}
+
+.container {
+  @apply relative w-full h-full px-0;
+  &::before {
+    @apply content-[""] absolute inset-0 -z-10 bg-top-right bg-repeat;
+    background: url("assets/img/background.png");
+    background-size: 510px auto;
+    filter: contrast(200%) invert(65%);
+  }
+}

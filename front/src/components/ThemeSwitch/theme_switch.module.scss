@@ -1,0 +1,72 @@
+.theme_switch {
+  @apply relative block select-none;
+  .checkbox {
+    /* @apply hidden; */
+  }
+  .button {
+    @apply relative block duration-300 ease-in transition-all rounded-full cursor-pointer w-[60px] h-[36px] border-2 border-[rgb(28,28,28)] bg-[rgb(60,65,69)];
+    &:before {
+      @apply absolute rounded-50% bg-white w-[30px] h-[30px] top-[1px] left-[1px] border-2 border-[rgb(227,227,199)];
+    }
+  }
+  .points {
+    @apply absolute block z-20 rounded-50% bg-white duration-200 top-1.5 animate-stars w-[3px] h-[3px] left-[50%];
+    box-shadow: rgba(255, 255, 255, 0.1) 12px -3px 0 0,
+      rgba(255, 255, 255, 0.1) 6px 4px 0 -1px, #fff 18px 8px 0 0px,
+      rgba(255, 255, 255, 0.1) 13px 17px 0 0, #fff 11px 10px 0 -1px,
+      rgba(255, 255, 255, 0.1) 2px 19px 0 0px;
+
+    &:before {
+      @apply absolute bg-white rounded-50% w-2.5 h-2.5 top-[-3px] left-[-14px] border-2 border-[rgb(227,227,199)] shadow-stars-before origin-stars;
+    }
+  }
+  .button,
+  .checkbox,
+  .points {
+    &,
+    &:before,
+    &:after {
+      @apply ease-in transition-all duration-300;
+    }
+    &:before,
+    &:after {
+      @apply content-[""] block;
+    }
+  }
+  .checkbox:checked {
+    & + .button {
+      @apply bg-blue-500 border-2 border-[rgb(37,99,235)];
+      &:before {
+        @apply bg-yellow-300 left-[25px] border-2 border-[rgb(234,179,8)];
+      }
+
+      > .points {
+        @apply opacity-0;
+        &:before {
+          @apply left-2.5 rotate-[70deg];
+        }
+      }
+    }
+  }
+}
+
+.input {
+  visibility: hidden;
+  &:checked + .label {
+    background-color: transparent;
+    box-shadow: inset -6px -4px 1px 1px #fff;
+  }
+  &:not(:checked) + .label {
+    background-color: gold;
+  }
+}
+
+.input + .label {
+  content: "";
+  display: inline-block;
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+}

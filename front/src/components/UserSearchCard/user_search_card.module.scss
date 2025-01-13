@@ -1,0 +1,15 @@
+.card {
+  @apply flex items-center gap-3 p-2 border cursor-pointer rounded-md duration-200;
+  &:hover {
+    @apply border-blue-custome;
+  }
+  .avatar {
+    @apply w-12 h-12 rounded-full object-cover;
+  }
+  .name {
+    @apply font-semibold;
+  }
+  .text {
+    @apply text-sm;
+  }
+}
