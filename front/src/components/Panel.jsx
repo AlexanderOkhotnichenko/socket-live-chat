@@ -8,7 +8,7 @@ export function Panel() {
   const basePath = location.pathname === "/";
 
   return (
-    <div className={`${!basePath ? "xs:hidden" : ""} flex xs:w-full`}>
+    <div className={`${!basePath ? "xs:hidden" : ""} flex h-full xs:w-full`}>
       <Sidebar />
       <Chats />
     </div>

@@ -17,7 +17,7 @@ export function Chats() {
   );
 
   return (
-    <section className={`${!basePath ? "md:hidden" : ""} w-full max-w-96 min-w-80 p-3 bg-white border-r-2 xs:max-w-full ls:min-w-0`}>
+    <section className={`${!basePath ? "md:hidden" : ""} w-full p-3 bg-white border-r-2 xs:max-w-full ls:min-w-0`}>
       <h2 className="text-3xl pb-7 font-bold">Chats</h2>
       <div className="flex gap-2">
         <Search value={searchUser} onChange={(event) => setSearchUser(event.target.value)} />

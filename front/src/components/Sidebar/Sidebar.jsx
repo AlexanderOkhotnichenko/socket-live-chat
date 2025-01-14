@@ -38,7 +38,7 @@ export function Sidebar() {
   };
 
   return (
-    <aside className={`${!basePath ? "xs:hidden": ""} flex flex-col justify-between gap-4 w-[84px] h-screen p-3 border-r-2 border-primary-border-color bg-primary-background duration-200 xs:p-2 xs:w-fit`}>
+    <aside className={`${!basePath ? "xs:hidden": ""} flex flex-col justify-between gap-4 w-[84px] h-full p-3 border-r-2 border-primary-border-color bg-primary-background duration-200 xs:p-2 xs:w-fit`}>
       <div className="flex flex-col gap-4">
         <NavLink to="/" title="Chats" className={`${isActiveLink("/") ? "bg-background-blue" : "hover:bg-background-blue"} group flex justify-center items-center rounded-md p-2 duration-200`}>
           <IoChatboxEllipsesOutline className={`${isActiveLink("/") ? "text-white" : "group-hover:text-hover-primary-text-color"} w-9 h-9 block cursor-pointer text-primary-text-color duration-200`} />
