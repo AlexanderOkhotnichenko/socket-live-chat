@@ -40,16 +40,15 @@ export function HomePage() {
     };
   }, [dispatch]);
 
+  if (loading) {
+    return <Loading />
+  }
+
   return (
-    <div className="flex">
-      {loading ? (<Loading text={"Loading..."} />
-      ) : (
-        <>
-          <Panel />
-          {userId !== "settings" && userId && <Chat />}
-          <SearchUser user={user} />
-        </>
-      )}
+    <div className="flex h-full">
+      <Panel />
+      {userId !== "settings" && userId && <Chat />}
+      <SearchUser user={user} />
     </div>
   );
 }

@@ -9,7 +9,7 @@ export function Panel() {
 
   return (
     <div className={`${!basePath ? "xs:hidden" : ""} flex h-full xs:w-full`}>
-      {/* <Sidebar /> */}
+      <Sidebar />
       <Chats />
     </div>
   );

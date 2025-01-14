@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider>
       <MainProvider>
-        <Main className="flex ">
+        <Main className="flex h-full">
           <Container className={styles.container}>
             {routes()}
             <ToastContainer />
