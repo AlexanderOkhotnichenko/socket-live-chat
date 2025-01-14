@@ -9,7 +9,7 @@ import { Loading } from "../components/Loading";
 
 export function routes() {
   const [tokenValid, setTokenValid] = useState(false);
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkToken = async () => {
@@ -26,16 +26,16 @@ export function routes() {
       } catch (error) {
         setTokenValid(false);
       } finally {
-        // setIsLoading(false);
+        setIsLoading(false);
       }
     };
 
     checkToken();
   }, []);
 
-  // if (isLoading) {
-  //   return <Loading />
-  // }
+  if (isLoading) {
+    return <Loading />
+  }
 
   return (
     <Routes>
