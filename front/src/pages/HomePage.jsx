@@ -41,7 +41,7 @@ export function HomePage() {
   }, [dispatch]);
 
   return (
-    <div className="flex h-full">
+    <div className="flex">
       {loading ? (<Loading text={"Loading..."} />
       ) : (
         <>
