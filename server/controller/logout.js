@@ -1,10 +1,8 @@
 async function logout(req, res) {
   try {
     const cookieOption = {
-      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: "None",
-      path: "/",
     };
 
     return res.cookie('token', '', cookieOption).status(200).json({

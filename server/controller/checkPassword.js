@@ -22,10 +22,8 @@ async function checkPassword(req, res) {
     const token = await jwt.sign(tokenData, process.env.JWT_SECRET_KEY, { expiresIn: '15s' });
 
     const cookieOption = {
-      httpOnly: false,
       secure: process.env.NODE_ENV === "production",
       sameSite: "None",
-      path: "/",
     };
 
     return res.cookie('token', token, cookieOption).status(200).json({
