@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
-import Cookies from "js-cookie";
+import axios from "axios";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { RegisterPage } from "../pages/RegisterPage";
 import { EmailPage } from "../pages/EmailPage";
 import { PasswordPage } from "../pages/PasswordPage";
-import axios from "axios";
+import { Loading } from "../components/Loading";
 
 export function routes() {
-  // const token = Cookies.get("token");
-  // const token = localStorage.getItem("token");
   const [tokenValid, setTokenValid] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const checkToken = async () => {
@@ -26,11 +25,17 @@ export function routes() {
         }
       } catch (error) {
         setTokenValid(false);
+      } finally {
+        // setIsLoading(false);
       }
     };
 
     checkToken();
   }, []);
+
+  if (isLoading) {
+    return <Loading />
+  }
 
   return (
     <Routes>

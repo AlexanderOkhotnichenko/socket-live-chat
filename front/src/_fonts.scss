@@ -6,3 +6,30 @@
   src: url("./fonts/Poppins-Regular.woff2"),
        url("./fonts/Poppins-Regular.woff");
 }
+
+@font-face {
+  font-family: '';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/Poppins-Medium.woff"),
+       url("./fonts/Poppins-Medium.woff2");
+}
+
+@font-face {
+  font-family: '';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src: url("./fonts/Poppins-SemiBold.woff"),
+       url("./fonts/Poppins-SemiBold.woff2");
+}
+
+@font-face {
+  font-family: '';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Poppins-Bold.woff"),
+       url("./fonts/Poppins-Bold.woff2");
+}

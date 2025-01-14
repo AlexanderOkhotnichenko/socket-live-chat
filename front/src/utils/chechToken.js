@@ -41,7 +41,7 @@ export const checkToken = async (dispatch) => {
 
     return true;
   } catch (error) {
-    console.error("Error during token validation:", error?.message);
+    toastMessage("error", error?.message);
     dispatch(logout());
     
     return false;

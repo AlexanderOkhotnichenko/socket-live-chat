@@ -12,20 +12,6 @@ export function Email() {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  const toastSuccess = (message) => {
-    return toast.success(message, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
-  };
-
   const handleOnChange = (event) => {
     const { name, value } = event.target;
 
@@ -58,7 +44,7 @@ export function Email() {
         });
       }
     } catch (error) {
-      console.log(errors);
+      console.log("errors:", errors);
       const validationErrors = {};
 
       if (error.inner) {

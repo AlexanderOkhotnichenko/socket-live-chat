@@ -1,6 +1,7 @@
 import axios from "axios";
 import { checkToken } from "./chechToken";
 import { logout, setUser } from "../redux/userSlice";
+import { toastMessage } from "../helpers/toastMessage";
 
 export const fetchUserData = async (dispatch) => {
   if (!checkToken(dispatch)) return;
@@ -19,6 +20,6 @@ export const fetchUserData = async (dispatch) => {
       dispatch(logout());
     }
   } catch (error) {
-    console.log("fetchUserData:", error);
+    toastMessage("error", error?.message);
   }
 };
