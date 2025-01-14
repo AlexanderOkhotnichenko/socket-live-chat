@@ -27,7 +27,8 @@ export default {
         "11": "44px",
       },
       maxWidth: {
-        450: "450px"
+        450: "450px",
+        "screen": "100vh"
       },
       borderColor: {
         "container": "rgba(255, 255, 255, 0.125)",
